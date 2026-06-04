@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy 4 Day Program</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="buy-page">
+    <h1>4 Day Training Program</h1>
+    <p>Purchase your program below.</p>
+
+    <div class="purchase-box">
+      <h2>$49.99</h2>
+
+      <button onclick="alert('Payment system not connected yet')">
+        Buy Now
+      </button>
+    </div>
+
+  </section>
+
+</body>
+</html>
