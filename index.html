@@ -4,151 +4,436 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nash Palmer Fitness</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    line-height:1.6;
-    color:#333;
+font-family:'Inter',sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
 }
 
-header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.95);
+backdrop-filter:blur(10px);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+border-bottom:1px solid #222;
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:10px;
+.logo{
+font-size:1.4rem;
+font-weight:900;
+letter-spacing:2px;
 }
 
-header p{
-    font-size:1.2rem;
-    margin-bottom:20px;
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+opacity:.7;
 }
 
 .btn{
-    display:inline-block;
-    background:#28a745;
-    color:white;
-    padding:12px 25px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
+display:inline-block;
+padding:15px 35px;
+border:2px solid white;
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+color:black;
+transform:translateY(-3px);
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+animation:fadeUp 1.2s ease;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,6rem);
+font-weight:900;
+line-height:1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+margin-bottom:40px;
+color:#ccc;
 }
 
 section{
-    padding:60px 20px;
-    max-width:1200px;
-    margin:auto;
+padding:100px 8%;
 }
 
-.programs{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.section-title{
+text-align:center;
+font-size:3rem;
+font-weight:900;
+margin-bottom:60px;
+}
+
+.program-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .card{
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+background:#111;
+padding:35px;
+border:1px solid #222;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:white;
 }
 
 .card h3{
-    margin-bottom:15px;
+margin-bottom:15px;
+font-size:1.5rem;
+}
+
+.card p{
+color:#bbb;
+margin-bottom:20px;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.testimonial{
+background:#111;
+padding:30px;
+border-left:4px solid white;
+}
+
+.testimonial p{
+color:#ddd;
+margin-bottom:20px;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.price-card{
+background:#111;
+padding:40px;
+text-align:center;
+border:1px solid #222;
 }
 
 .price{
-    font-size:2rem;
-    color:#28a745;
-    margin:15px 0;
+font-size:3rem;
+font-weight:900;
+margin:20px 0;
 }
 
 .about{
-    text-align:center;
+max-width:900px;
+margin:auto;
+text-align:center;
 }
 
 .contact{
-    text-align:center;
+text-align:center;
 }
 
 footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
+padding:40px;
+text-align:center;
+border-top:1px solid #222;
+color:#888;
 }
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+nav{
+padding:15px 5%;
+}
+
+nav ul{
+gap:15px;
+font-size:.9rem;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+}
+
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Nash Palmer Fitness</h1>
-    <p>Custom Training Programs Designed To Get Results</p>
-    <a href="#programs" class="btn">View Programs</a>
-</header>
+<nav>
+<div class="logo">NASH PALMER FITNESS</div>
 
-<section class="about">
-    <h2>About Me</h2>
-    <br>
-    <p>
-        I'm a certified Personal Trainer helping busy people lose fat,
-        build muscle and improve their fitness through structured,
-        easy-to-follow training programs.
-    </p>
+<ul>
+<li><a href="#programs">Programs</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>BUILD MUSCLE.<br>LOSE FAT.<br>TRANSFORM.</h1>
+
+<p>
+Evidence-based training programs and coaching designed
+to help you build the physique you've always wanted.
+</p>
+
+<a href="#pricing" class="btn">VIEW PROGRAMS</a>
+
+</div>
+
 </section>
 
-<section id="programs">
-    <h2 style="text-align:center;margin-bottom:40px;">Training Programs</h2>
+<section id="programs" class="fade">
 
-    <div class="programs">
+<h2 class="section-title">PROGRAMS</h2>
 
-        <div class="card">
-            <h3>Fat Loss Program</h3>
-            <p>12-week plan focused on sustainable weight loss.</p>
-            <div class="price">$79</div>
-            <a href="#" class="btn">Buy Now</a>
-        </div>
+<div class="program-grid">
 
-        <div class="card">
-            <h3>Muscle Building Program</h3>
-            <p>Progressive training program for maximum muscle growth.</p>
-            <div class="price">$99</div>
-            <a href="#" class="btn">Buy Now</a>
-        </div>
+<div class="card">
+<h3>Hypertrophy Academy</h3>
+<p>
+Complete muscle-building system with progression,
+exercise selection and recovery strategies.
+</p>
+<a href="#" class="btn">LEARN MORE</a>
+</div>
 
-        <div class="card">
-            <h3>1-on-1 Coaching</h3>
-            <p>Personalised coaching, programming and accountability.</p>
-            <div class="price">$199/mo</div>
-            <a href="#" class="btn">Apply Now</a>
-        </div>
+<div class="card">
+<h3>Fat Loss Accelerator</h3>
+<p>
+Lose fat while maintaining muscle using structured
+training and nutrition guidance.
+</p>
+<a href="#" class="btn">LEARN MORE</a>
+</div>
 
-    </div>
+<div class="card">
+<h3>1-on-1 Coaching</h3>
+<p>
+Custom training, accountability and support tailored
+to your goals.
+</p>
+<a href="#" class="btn">APPLY NOW</a>
+</div>
+
+</div>
+
 </section>
 
-<section class="contact">
-    <h2>Get Started</h2>
-    <br>
-    <p>Email: nashfitness@email.com</p>
-    <p>Instagram: @nashfitness</p>
-    <br>
-    <a href="mailto:nashfitness@email.com" class="btn">Contact Me</a>
+<section id="results" class="fade">
+
+<h2 class="section-title">CLIENT RESULTS</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>
+"Added 8kg of muscle and finally broke through years of
+plateaus."
+</p>
+<strong>– Client Transformation</strong>
+</div>
+
+<div class="testimonial">
+<p>
+"Lost 15kg while keeping strength and building confidence."
+</p>
+<strong>– Fat Loss Client</strong>
+</div>
+
+<div class="testimonial">
+<p>
+"The best investment I've made in my fitness journey."
+</p>
+<strong>– Online Coaching Client</strong>
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing" class="fade">
+
+<h2 class="section-title">PRICING</h2>
+
+<div class="pricing">
+
+<div class="price-card">
+<h3>Hypertrophy Academy</h3>
+<div class="price">$79</div>
+<p>Lifetime access</p>
+<br>
+<a href="#" class="btn">BUY NOW</a>
+</div>
+
+<div class="price-card">
+<h3>Fat Loss Accelerator</h3>
+<div class="price">$79</div>
+<p>Lifetime access</p>
+<br>
+<a href="#" class="btn">BUY NOW</a>
+</div>
+
+<div class="price-card">
+<h3>1-on-1 Coaching</h3>
+<div class="price">$199</div>
+<p>Per month</p>
+<br>
+<a href="#" class="btn">APPLY</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="fade">
+
+<h2 class="section-title">ABOUT</h2>
+
+<div class="about">
+
+<p>
+I'm Nash Palmer, a Personal Trainer dedicated to helping
+clients build muscle, lose fat and improve performance
+through evidence-based training principles and long-term
+sustainable strategies.
+</p>
+
+</div>
+
+</section>
+
+<section id="contact" class="fade">
+
+<h2 class="section-title">CONTACT</h2>
+
+<div class="contact">
+
+<p>Instagram: @nashfitness</p>
+<br>
+
+<a href="mailto:your@email.com" class="btn">
+EMAIL ME
+</a>
+
+</div>
+
 </section>
 
 <footer>
-    <p>© 2026 Nash Palmer Fitness. All Rights Reserved.</p>
+
+© 2026 Nash Palmer Fitness. All Rights Reserved.
+
 </footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
