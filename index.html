@@ -108,8 +108,22 @@ margin-bottom:20px;
 font-size:1.2rem;
 max-width:700px;
 margin:auto;
-margin-bottom:40px;
+margin-bottom:15px;
 color:#ccc;
+}
+
+/* PROOF STRIP */
+.proof-strip{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:#0a0a0a;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
+color:#aaa;
+font-size:.9rem;
+flex-wrap:wrap;
 }
 
 /* SECTIONS */
@@ -143,29 +157,6 @@ transform:translateY(-10px);
 border-color:white;
 }
 
-.card h3{
-margin-bottom:15px;
-font-size:1.5rem;
-}
-
-.card p{
-color:#bbb;
-margin-bottom:20px;
-}
-
-/* TESTIMONIALS */
-.testimonials{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.testimonial{
-background:#111;
-padding:30px;
-border-left:4px solid white;
-}
-
 /* PRICING */
 .pricing{
 display:grid;
@@ -180,20 +171,18 @@ text-align:center;
 border:1px solid #222;
 }
 
+.price-card.featured{
+border:1px solid white;
+transform:scale(1.05);
+}
+
 .price{
 font-size:3rem;
 font-weight:900;
 margin:20px 0;
 }
 
-/* ABOUT */
-.about{
-max-width:900px;
-margin:auto;
-text-align:center;
-}
-
-/* CONTACT (UPDATED PRO SECTION) */
+/* CONTACT */
 .contact{
 text-align:center;
 }
@@ -207,7 +196,8 @@ gap:15px;
 }
 
 .contact input,
-.contact textarea{
+.contact textarea,
+.contact select{
 padding:12px;
 background:#111;
 border:1px solid #222;
@@ -218,6 +208,12 @@ outline:none;
 .contact textarea{
 height:120px;
 resize:none;
+}
+
+/* FINAL CTA */
+.final-cta{
+text-align:center;
+padding:120px 20px;
 }
 
 /* FOOTER */
@@ -245,25 +241,31 @@ from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
 
+/* STICKY CTA */
+.sticky-btn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:white;
+color:black;
+padding:15px 20px;
+font-weight:700;
+text-decoration:none;
+border-radius:50px;
+z-index:9999;
+box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.sticky-btn:hover{
+transform:scale(1.05);
+}
+
 /* MOBILE */
 @media(max-width:768px){
-
-nav{
-padding:15px 5%;
-}
-
-nav ul{
-gap:15px;
-font-size:.9rem;
-}
-
-.hero h1{
-font-size:3rem;
-}
-
-.section-title{
-font-size:2rem;
-}
+nav ul{display:none;}
+.hero h1{font-size:3rem;}
+.section-title{font-size:2rem;}
+.proof-strip{gap:20px;}
 }
 
 </style>
@@ -274,7 +276,6 @@ font-size:2rem;
 <!-- NAV -->
 <nav>
 <div class="logo">NASH PALMER FITNESS</div>
-
 <ul>
 <li><a href="#programs">Programs</a></li>
 <li><a href="#results">Results</a></li>
@@ -290,15 +291,20 @@ font-size:2rem;
 
 <h1>BUILD MUSCLE.<br>LOSE FAT.<br>TRANSFORM.</h1>
 
-<p>
-Evidence-based training programs and coaching designed
-to help you build the physique you've always wanted.
-</p>
+<p>Evidence-based coaching designed to help you build your ideal physique.</p>
+<p style="color:#888;">Limited coaching spots available each month.</p>
 
-<a href="#pricing" class="btn">VIEW PROGRAMS</a>
+<a href="#pricing" class="btn">GET STARTED</a>
 
 </div>
 </section>
+
+<!-- PROOF -->
+<div class="proof-strip">
+<div>✔ Evidence-based training</div>
+<div>✔ Personalised coaching</div>
+<div>✔ Client transformations</div>
+</div>
 
 <!-- PROGRAMS -->
 <section id="programs" class="fade">
@@ -309,53 +315,20 @@ to help you build the physique you've always wanted.
 
 <div class="card">
 <h3>FBEOD PROGRAM</h3>
-<p>
-A structured 3-day FBEOD program designed to maximise fat loss, build strength,
-and improve overall performance.
-</p>
+<p>3-day structured fat loss and strength system.</p>
 <a href="3-day-program.html" class="btn">LEARN MORE</a>
 </div>
 
 <div class="card">
-<h3>UPPER LOWER PROGRAM</h3>
-<p>
-A structured upper/lower split designed to build muscle and strength with progressive overload.
-</p>
+<h3>UPPER LOWER</h3>
+<p>Muscle-building split with progressive overload.</p>
 <a href="buy-program.html" class="btn">LEARN MORE</a>
 </div>
 
 <div class="card">
-<h3>1-on-1 Coaching</h3>
-<p>
-Personalised coaching tailored to your goals, experience level, and lifestyle.
-</p>
+<h3>1-on-1 COACHING</h3>
+<p>Fully personalised coaching and accountability.</p>
 <a href="#contact" class="btn">APPLY NOW</a>
-</div>
-
-</div>
-
-</section>
-
-<!-- RESULTS -->
-<section id="results" class="fade">
-
-<h2 class="section-title">CLIENT RESULTS</h2>
-
-<div class="testimonials">
-
-<div class="testimonial">
-<p>"Super clear programming and helped me stay consistent."</p>
-<strong>– Mia C</strong>
-</div>
-
-<div class="testimonial">
-<p>"Easy to follow and actually got results fast."</p>
-<strong>– Daniel I</strong>
-</div>
-
-<div class="testimonial">
-<p>"Very personalised and supportive coaching."</p>
-<strong>– Tynan P</strong>
 </div>
 
 </div>
@@ -369,19 +342,19 @@ Personalised coaching tailored to your goals, experience level, and lifestyle.
 
 <div class="pricing">
 
-<div class="price-card">
-<a href="3-day-program.html" class="btn">3 Day FBEOD Program</a>
+<div class="price-card featured">
+<a href="3-day-program.html" class="btn">3 DAY PROGRAM</a>
 <div class="price">$79</div>
 </div>
 
 <div class="price-card">
-<a href="buy-program.html" class="btn">4 Day Program</a>
+<a href="buy-program.html" class="btn">4 DAY PROGRAM</a>
 <div class="price">$79</div>
 </div>
 
 <div class="price-card">
 <a href="https://docs.google.com/forms/d/e/1FAIpQLScfme1Kg73Fce0NjtmMnmNGYYxMZB03NBaBMnvz793R9mjIYA/viewform"
-target="_blank" class="btn">1 on 1 Coaching</a>
+target="_blank" class="btn">1 ON 1 COACHING</a>
 <div class="price">$99</div>
 </div>
 
@@ -394,31 +367,39 @@ target="_blank" class="btn">1 on 1 Coaching</a>
 
 <h2 class="section-title">ABOUT</h2>
 
-<div class="about">
-<p>
-I began my fitness journey as a skinny 18-year-old and now help clients achieve results
-through structured training and coaching backed by qualifications and experience.
+<p style="max-width:800px;margin:auto;text-align:center;color:#bbb;">
+I began my fitness journey as a skinny 18-year-old and now help clients transform their physiques through structured training and coaching.
 </p>
-</div>
 
 </section>
 
-<!-- CONTACT (NEW IMPROVED SECTION) -->
+<!-- CONTACT -->
 <section id="contact" class="fade">
 
 <h2 class="section-title">CONTACT</h2>
 
 <div class="contact">
 
-<p>Apply for coaching or send a message below</p>
-
 <form action="https://formspree.io/f/YOUR_ID" method="POST">
 
 <input type="text" name="name" placeholder="Name" required>
 <input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Your message..." required></textarea>
 
-<button type="submit" class="btn">SEND MESSAGE</button>
+<select name="goal">
+<option>Fat Loss</option>
+<option>Muscle Gain</option>
+<option>Strength</option>
+</select>
+
+<select name="experience">
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+</select>
+
+<textarea name="message" placeholder="Tell me about your goals..." required></textarea>
+
+<button type="submit" class="btn">APPLY FOR COACHING</button>
 
 </form>
 
@@ -426,14 +407,24 @@ through structured training and coaching backed by qualifications and experience
 
 </section>
 
+<!-- FINAL CTA -->
+<section class="final-cta">
+<h2>READY TO TRANSFORM?</h2>
+<p style="color:#888;margin:20px 0;">Start your journey today.</p>
+<a href="#pricing" class="btn">VIEW PROGRAMS</a>
+</section>
+
 <!-- FOOTER -->
 <footer>
-© 2026 Nash Palmer Fitness. All Rights Reserved.
+© 2026 Nash Palmer Fitness
 </footer>
 
-<!-- ANIMATION SCRIPT -->
+<!-- STICKY CTA -->
+<a href="#contact" class="sticky-btn">APPLY NOW</a>
+
+<!-- ANIMATION -->
 <script>
-const observer = new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
 entry.target.classList.add('show');
