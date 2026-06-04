@@ -16,22 +16,14 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
-body{<nav class="navbar">
-  <div class="logo">FITCOACH</div>
-
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="buy-program.html">4 Day</a>
-    <a href="3-day-program.html">3 Day</a>
-    <a href="https://forms.gle/YOURFORM" target="_blank">1 on 1</a>
-  </div>
-</nav>
+body{
 font-family:'Inter',sans-serif;
 background:#000;
 color:#fff;
 overflow-x:hidden;
 }
 
+/* NAV */
 nav{
 position:fixed;
 top:0;
@@ -69,6 +61,7 @@ nav a:hover{
 opacity:.7;
 }
 
+/* BUTTON */
 .btn{
 display:inline-block;
 padding:15px 35px;
@@ -85,6 +78,7 @@ color:black;
 transform:translateY(-3px);
 }
 
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -118,6 +112,7 @@ margin-bottom:40px;
 color:#ccc;
 }
 
+/* SECTIONS */
 section{
 padding:100px 8%;
 }
@@ -129,6 +124,7 @@ font-weight:900;
 margin-bottom:60px;
 }
 
+/* PROGRAMS */
 .program-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -157,6 +153,7 @@ color:#bbb;
 margin-bottom:20px;
 }
 
+/* TESTIMONIALS */
 .testimonials{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -169,11 +166,7 @@ padding:30px;
 border-left:4px solid white;
 }
 
-.testimonial p{
-color:#ddd;
-margin-bottom:20px;
-}
-
+/* PRICING */
 .pricing{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -193,16 +186,41 @@ font-weight:900;
 margin:20px 0;
 }
 
+/* ABOUT */
 .about{
 max-width:900px;
 margin:auto;
 text-align:center;
 }
 
+/* CONTACT (UPDATED PRO SECTION) */
 .contact{
 text-align:center;
 }
 
+.contact form{
+max-width:500px;
+margin:30px auto 0;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact input,
+.contact textarea{
+padding:12px;
+background:#111;
+border:1px solid #222;
+color:#fff;
+outline:none;
+}
+
+.contact textarea{
+height:120px;
+resize:none;
+}
+
+/* FOOTER */
 footer{
 padding:40px;
 text-align:center;
@@ -210,6 +228,7 @@ border-top:1px solid #222;
 color:#888;
 }
 
+/* ANIMATION */
 .fade{
 opacity:0;
 transform:translateY(40px);
@@ -222,16 +241,11 @@ transform:translateY(0);
 }
 
 @keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
 
+/* MOBILE */
 @media(max-width:768px){
 
 nav{
@@ -254,8 +268,10 @@ font-size:2rem;
 
 </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="logo">NASH PALMER FITNESS</div>
 
@@ -268,8 +284,8 @@ font-size:2rem;
 </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-
 <div class="hero-content">
 
 <h1>BUILD MUSCLE.<br>LOSE FAT.<br>TRANSFORM.</h1>
@@ -282,9 +298,9 @@ to help you build the physique you've always wanted.
 <a href="#pricing" class="btn">VIEW PROGRAMS</a>
 
 </div>
-
 </section>
 
+<!-- PROGRAMS -->
 <section id="programs" class="fade">
 
 <h2 class="section-title">PROGRAMS</h2>
@@ -294,40 +310,33 @@ to help you build the physique you've always wanted.
 <div class="card">
 <h3>FBEOD PROGRAM</h3>
 <p>
-A structured 3-day FBEOD program designed to maximise fat loss, build strength, 
-and improve overall performance with clear, 
-easy-to-follow training sessions. 
-Perfect for anyone wanting efficient, results-driven workouts 
-without overcomplicating their training routine.
+A structured 3-day FBEOD program designed to maximise fat loss, build strength,
+and improve overall performance.
 </p>
-<a href="#" class="btn">LEARN MORE</a>
+<a href="3-day-program.html" class="btn">LEARN MORE</a>
 </div>
 
 <div class="card">
 <h3>UPPER LOWER PROGRAM</h3>
 <p>
-A structured upper/lower split designed to build muscle, increase strength, 
-and improve training balance across the week 
-with clear progressive overload. 
-Ideal for lifters who want an effective, sustainable program that drives consistent results 
-without unnecessary complexity.
+A structured upper/lower split designed to build muscle and strength with progressive overload.
 </p>
-<a href="#" class="btn">LEARN MORE</a>
+<a href="buy-program.html" class="btn">LEARN MORE</a>
 </div>
 
 <div class="card">
 <h3>1-on-1 Coaching</h3>
 <p>
-Personalised 1 on 1 coaching tailored to your goals, experience level, and lifestyle so every session is designed to maximise results 
-  and eliminate guesswork. Get direct expert guidance, accountability, and structured programming to ensure you progress faster and stay consistent.
+Personalised coaching tailored to your goals, experience level, and lifestyle.
 </p>
-<a href="#" class="btn">APPLY NOW</a>
+<a href="#contact" class="btn">APPLY NOW</a>
 </div>
 
 </div>
 
 </section>
 
+<!-- RESULTS -->
 <section id="results" class="fade">
 
 <h2 class="section-title">CLIENT RESULTS</h2>
@@ -335,26 +344,17 @@ Personalised 1 on 1 coaching tailored to your goals, experience level, and lifes
 <div class="testimonials">
 
 <div class="testimonial">
-<p>
-"Gave me the confidece i lacked to push myself in the gym, allowing me to
-unlock my full potential. Super hands on and explained things clearly and simple"
-</p>
+<p>"Super clear programming and helped me stay consistent."</p>
 <strong>– Mia C</strong>
 </div>
 
 <div class="testimonial">
-<p>
-"Manage to work around my busy schedule, simple and easy to follow programs,
-personalized and effective, would recommend."
-</p>
+<p>"Easy to follow and actually got results fast."</p>
 <strong>– Daniel I</strong>
 </div>
 
 <div class="testimonial">
-<p>
-"Super fast and reliable when i needed help, his upper lower program
-was a fantastic investment and was happy to personalize it for me."
-</p>
+<p>"Very personalised and supportive coaching."</p>
 <strong>– Tynan P</strong>
 </div>
 
@@ -362,6 +362,7 @@ was a fantastic investment and was happy to personalize it for me."
 
 </section>
 
+<!-- PRICING -->
 <section id="pricing" class="fade">
 
 <h2 class="section-title">PRICING</h2>
@@ -371,68 +372,67 @@ was a fantastic investment and was happy to personalize it for me."
 <div class="price-card">
 <a href="3-day-program.html" class="btn">3 Day FBEOD Program</a>
 <div class="price">$79</div>
-<p>Lifetime access</p>
-<br>
 </div>
 
 <div class="price-card">
-<a href="buy-program.html" class="btn">4 DAY U/L PROGRAM</a>
+<a href="buy-program.html" class="btn">4 Day Program</a>
 <div class="price">$79</div>
-<p>Lifetime access</p>
 </div>
 
 <div class="price-card">
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScfme1Kg73Fce0NjtmMnmNGYYxMZB03NBaBMnvz793R9mjIYA/viewform?usp=publish-editor" target="_blank" class="btn">1 on 1 Coaching</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScfme1Kg73Fce0NjtmMnmNGYYxMZB03NBaBMnvz793R9mjIYA/viewform"
+target="_blank" class="btn">1 on 1 Coaching</a>
 <div class="price">$99</div>
-<p>Per session</p>
-<br>
 </div>
 
 </div>
 
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="fade">
 
 <h2 class="section-title">ABOUT</h2>
 
 <div class="about">
-
 <p>
-I began my fitness journey as a skinny 18-year-old with little knowledge of training or nutrition. 
-Since then, I’ve completed my Certificate III and IV in Fitness and developed into a fully qualified personal trainer
-now passionate about helping others achieve goals they once thought were out of reach.
+I began my fitness journey as a skinny 18-year-old and now help clients achieve results
+through structured training and coaching backed by qualifications and experience.
 </p>
-
 </div>
 
 </section>
 
+<!-- CONTACT (NEW IMPROVED SECTION) -->
 <section id="contact" class="fade">
 
 <h2 class="section-title">CONTACT</h2>
 
 <div class="contact">
 
-<p>Instagram: @nashpalmer_</p>
-<br>
+<p>Apply for coaching or send a message below</p>
 
-<a href="mailto:nashpalmer1@gmail.com" class="btn">
-EMAIL ME
-</a>
+<form action="https://formspree.io/f/YOUR_ID" method="POST">
+
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Your message..." required></textarea>
+
+<button type="submit" class="btn">SEND MESSAGE</button>
+
+</form>
 
 </div>
 
 </section>
 
+<!-- FOOTER -->
 <footer>
-
 © 2026 Nash Palmer Fitness. All Rights Reserved.
-
 </footer>
 
+<!-- ANIMATION SCRIPT -->
 <script>
-
 const observer = new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -444,7 +444,6 @@ entry.target.classList.add('show');
 document.querySelectorAll('.fade').forEach(el=>{
 observer.observe(el);
 });
-
 </script>
 
 </body>
