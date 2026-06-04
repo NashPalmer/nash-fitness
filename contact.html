@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Coaching Enquiries</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+    }
+
+    /* NAV */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+    }
+
+    .navbar a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: white;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 140px 20px 80px;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    /* FORM BOX */
+    .form-box {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      background: #111;
+      border: 1px solid #333;
+      color: white;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    /* BUTTON */
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      width: 100%;
+      padding: 14px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+
+    /* SMALL TEXT */
+    .note {
+      text-align: center;
+      margin-top: 15px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div><strong>FITCOACH</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="buy-program.html">Programs</a>
+      <a href="3-day-program.html">3 Day</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <h1>Apply for Coaching</h1>
+      <p>Fill out the form below and I’ll get back to you within 24 hours</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-box">
+
+      <form action="https://formspree.io/f/YOUR_ID" method="POST">
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Goal</label>
+        <select name="goal">
+          <option>Fat Loss</option>
+          <option>Muscle Gain</option>
+          <option>Strength</option>
+          <option>General Fitness</option>
+        </select>
+
+        <label>Current Experience</label>
+        <select name="experience">
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+
+        <label>Your Message</label>
+        <textarea name="message" placeholder="Tell me about your goals..." required></textarea>
+
+        <button class="btn" type="submit">Send Application</button>
+
+      </form>
+
+      <div class="note">
+        I’ll respond within 24 hours with next steps
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
